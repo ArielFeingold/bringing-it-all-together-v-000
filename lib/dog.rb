@@ -2,7 +2,7 @@ class Dog
 
 attr_accessor :name, :breed, :id
 
-  def initialize(name:, breed: nil, id: nil)
+  def initialize(name:, breed:, id: nil)
     @name = name
     @breed = breed
     @id = id
@@ -29,7 +29,7 @@ attr_accessor :name, :breed, :id
   end
 
   def save
-    dog = Dog.new(:name, :breed)
+    dog = Dog.new
 
       sql = <<-SQL
         INSERT INTO dogs(name, breed) VALUES (?, ?)

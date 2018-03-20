@@ -28,8 +28,8 @@ attr_accessor :name, :breed, :id
     DB[:conn].execute(sql)
   end
 
-  def save(name, breed)
-    dog = Dog.new(name, breed)
+  def save
+    dog = Dog.new(name:)
 
       sql = <<-SQL
         INSERT INTO dogs(name, breed) VALUES (?, ?)

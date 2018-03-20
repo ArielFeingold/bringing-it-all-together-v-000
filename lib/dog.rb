@@ -33,7 +33,7 @@ attr_accessor :name, :breed, :id
       sql = <<-SQL
         INSERT INTO dogs(name, breed) VALUES (?, ?)
       SQL
-
+binding.pry
       DB[:conn].execute(sql, dog.name, dog.breed)
       @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
       dog

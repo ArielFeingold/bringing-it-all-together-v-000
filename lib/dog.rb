@@ -29,7 +29,7 @@ attr_accessor :name, :breed, :id
   end
 
   def save
-    Dog.new(name)
+    Dog.new
     # if self.id
     #   self.update
     # else

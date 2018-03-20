@@ -70,9 +70,9 @@ attr_accessor :name, :breed, :id
     if !dog.empty?
       dog_data = dog[0]
       dog = Dog.new
-      dog.id = dog_data[0]
-      dog.name = dog_data[1]
-      dog.breed = dog_data[2])
+      # dog.id = dog_data[0]
+      # dog.name = dog_data[1]
+      # dog.breed = dog_data[2])
     else
       dog = self.create(name: name, album: breed)
     end

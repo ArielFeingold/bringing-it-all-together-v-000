@@ -48,8 +48,9 @@ attr_accessor :name, :breed, :id
 end
 
   def self.create(hash)
-    binding.pry
-    dog = Dog.new(hash[1], hash[2])
+    dog = Dog.new
+    dog.breed = hash[:breed]
+    dog.name = hash[:name]
     dog.save
     dog
   end

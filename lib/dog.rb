@@ -48,7 +48,7 @@ attr_accessor :name, :breed, :id
 end
 
   def self.create(hash)
-    dog = Dog.new
+    dog = Dog.new(hash[1], hash[2])
     dog.save
     dog
   end

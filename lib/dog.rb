@@ -28,6 +28,10 @@ attr_accessor :name, :breed, :id
     DB[:conn].execute(sql)
   end
 
+  def save
+
+  end
+
 
 
 

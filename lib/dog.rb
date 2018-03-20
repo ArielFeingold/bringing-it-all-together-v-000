@@ -28,7 +28,7 @@ attr_accessor :name, :breed, :id
     DB[:conn].execute(sql)
   end
 
-  def save(name, breed)
+  def save
     Dogs.new(name, breed)
     # if self.id
     #   self.update

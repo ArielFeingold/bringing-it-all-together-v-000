@@ -62,6 +62,7 @@ attr_accessor :name, :breed, :id
     dog.name = result[1]
     dog.id = result[0]
     dog.breed = result[2]
+    dog
   end
 
 

@@ -59,9 +59,6 @@ attr_accessor :name, :breed, :id
     sql = "SELECT * FROM dogs WHERE id = ?"
     result = DB[:conn].execute(sql, id)[0]
     dog = Dog.new(name: result[1], id: result[0], breed: result[2])
-    # dog.name = 
-    # dog.id =
-    # dog.breed = result[2]
     dog
   end
 
@@ -75,6 +72,14 @@ attr_accessor :name, :breed, :id
       dog = self.create(name: name, album: breed)
     end
     dog
+  end
+
+  def self.new_from_db(row)
+    new_song = self.new
+    new_song.id = row[0]
+    new_song.name =  row[1]
+    new_song.length = row[2]
+    new_song  
   end
 
 

@@ -55,10 +55,10 @@ attr_accessor :name, :breed, :id
     dog
   end
 
-  def self.find_by_id(id)
-    sql = "SELECT * FROM dogs WHERE id = ?"
-    result = DB[:conn].execute(sql, id)[0]
-    Dog.new(result[0], result[1], result[2])
+  def self.find_by_id(id, name, breed)
+    # sql = "SELECT * FROM dogs WHERE id = ?"
+    # result = DB[:conn].execute(sql, id)[0]
+    # Dog.new(result[0], result[1], result[2])
   end
 
 

@@ -58,10 +58,10 @@ attr_accessor :name, :breed, :id
   def self.find_by_id(id)
     sql = "SELECT * FROM dogs WHERE id = ?"
     result = DB[:conn].execute(sql, id)[0]
-    dog = Dog.new
-    dog.name = result[1]
-    dog.id = result[0]
-    dog.breed = result[2]
+    dog = Dog.new(name: result[1], id: result[0], breed: result[2])
+    # dog.name = 
+    # dog.id =
+    # dog.breed = result[2]
     dog
   end
 
@@ -69,11 +69,8 @@ attr_accessor :name, :breed, :id
     dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
     if !dog.empty?
       dog_data = dog[0]
-      binding.pry
       dog = Dog.new
-      # dog.id = dog_data[0]
-      # dog.name = dog_data[1]
-      # dog.breed = dog_data[2])
+      dog = Dog.new(id: dog_data[0], name: dog_data[1], breed: dog_data[2])
     else
       dog = self.create(name: name, album: breed)
     end

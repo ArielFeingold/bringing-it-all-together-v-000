@@ -47,8 +47,10 @@ attr_accessor :name, :breed, :id
   self
 end
 
-  def create
-
+  def self.create(name:, breed:)
+    dog = Dog.new(name, breed)
+    gog.save
+    dog
   end
 
 

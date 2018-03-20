@@ -28,7 +28,7 @@ attr_accessor :name, :breed, :id
     DB[:conn].execute(sql)
   end
 
-  def save
+  def save(name, breed)
     dog = Dog.new(name, breed)
 
       sql = <<-SQL

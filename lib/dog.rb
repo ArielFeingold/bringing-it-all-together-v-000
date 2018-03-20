@@ -74,7 +74,7 @@ attr_accessor :name, :breed, :id
       dog.name = dog_data[1]
       dog.breed = dog_data[2])
     else
-      song = self.create(name: name, album: album)
+      song = self.create(name: name, album: breed)
     end
     song
   end
